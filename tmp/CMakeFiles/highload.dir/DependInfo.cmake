@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/logger.c" "/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/highload.dir/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/logger.c.o"
-  "/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/main.c" "/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/highload.dir/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/main.c.o"
+  "/media/D/tp/3/highload/src/logger.c" "/media/D/tp/3/highload/tmp/CMakeFiles/highload.dir/media/D/tp/3/highload/src/logger.c.o"
+  "/media/D/tp/3/highload/src/main.c" "/media/D/tp/3/highload/tmp/CMakeFiles/highload.dir/media/D/tp/3/highload/src/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

@@ -1,55 +1,58 @@
-Determining if the pthread_create exist failed with the following output:
-Change Dir: /media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_2e9cf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_2e9cf.dir/build.make CMakeFiles/cmTC_2e9cf.dir/build
-make[1]: Entering directory '/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_2e9cf.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_2e9cf.dir/CheckSymbolExists.c.o   -c /media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_2e9cf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e9cf.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_2e9cf.dir/CheckSymbolExists.c.o  -o cmTC_2e9cf 
-CMakeFiles/cmTC_2e9cf.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+Run Build Command(s):/usr/bin/make cmTC_0b3dc/fast && /usr/bin/make -f CMakeFiles/cmTC_0b3dc.dir/build.make CMakeFiles/cmTC_0b3dc.dir/build
+make[1]: Entering directory '/media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0b3dc.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_0b3dc.dir/src.c.o   -c /media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_0b3dc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0b3dc.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    -rdynamic CMakeFiles/cmTC_0b3dc.dir/src.c.o  -o cmTC_0b3dc 
+/usr/bin/ld: CMakeFiles/cmTC_0b3dc.dir/src.c.o: in function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+/usr/bin/ld: src.c:(.text+0x4a): undefined reference to `pthread_detach'
+/usr/bin/ld: src.c:(.text+0x5b): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_2e9cf.dir/build.make:97: recipe for target 'cmTC_2e9cf' failed
-make[1]: *** [cmTC_2e9cf] Error 1
-make[1]: Leaving directory '/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_2e9cf/fast' failed
-make: *** [cmTC_2e9cf/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_0b3dc.dir/build.make:87: cmTC_0b3dc] Error 1
+make[1]: Leaving directory '/media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0b3dc/fast] Error 2
 
-File /media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
+
+Source file was:
 #include <pthread.h>
 
-int main(int argc, char** argv)
+void* test_func(void* data)
 {
-  (void)argv;
-#ifndef pthread_create
-  return ((int*)(&pthread_create))[argc];
-#else
-  (void)argc;
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
   return 0;
-#endif
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp
+Change Dir: /media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_c3c90/fast"
-/usr/bin/make -f CMakeFiles/cmTC_c3c90.dir/build.make CMakeFiles/cmTC_c3c90.dir/build
-make[1]: Entering directory '/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_c3c90.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c3c90.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_c3c90
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3c90.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_c3c90.dir/CheckFunctionExists.c.o  -o cmTC_c3c90 -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_dc9d7/fast && /usr/bin/make -f CMakeFiles/cmTC_dc9d7.dir/build.make CMakeFiles/cmTC_dc9d7.dir/build
+make[1]: Entering directory '/media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_dc9d7.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_dc9d7.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.15/Modules/CheckFunctionExists.c
+Linking C executable cmTC_dc9d7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_dc9d7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_dc9d7.dir/CheckFunctionExists.c.o  -o cmTC_dc9d7 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_c3c90.dir/build.make:97: recipe for target 'cmTC_c3c90' failed
-make[1]: *** [cmTC_c3c90] Error 1
-make[1]: Leaving directory '/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/tmp/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_c3c90/fast' failed
-make: *** [cmTC_c3c90/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_dc9d7.dir/build.make:87: cmTC_dc9d7] Error 1
+make[1]: Leaving directory '/media/D/tp/3/highload/tmp/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_dc9d7/fast] Error 2
+
 
 

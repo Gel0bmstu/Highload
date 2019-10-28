@@ -6,27 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/http.h
+/media/D/tp/3/highload/headers/http.h
 ../src/http.c
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/http.c
+/media/D/tp/3/highload/src/http.c
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/logger.h
+/media/D/tp/3/highload/headers/logger.h
 stdio.h
 -
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/parser.h
+/media/D/tp/3/highload/headers/parser.h
 string.h
 -
 ../src/parser.c
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/parser.c
+/media/D/tp/3/highload/src/parser.c
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/serve.h
+/media/D/tp/3/highload/headers/serve.h
 ../src/serve.c
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/serve.c
+/media/D/tp/3/highload/src/serve.c
 stdio.h
 -
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/http.c
+/media/D/tp/3/highload/src/http.c
 stdio.h
 -
 stdlib.h
@@ -36,9 +36,9 @@ string.h
 time.h
 -
 ../headers/http.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/http.h
+/media/D/tp/3/highload/headers/http.h
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/logger.c
+/media/D/tp/3/highload/src/logger.c
 stdio.h
 -
 stdarg.h
@@ -46,15 +46,15 @@ stdarg.h
 time.h
 -
 ../headers/logger.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/logger.h
+/media/D/tp/3/highload/headers/logger.h
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/main.c
+/media/D/tp/3/highload/src/main.c
 ../headers/serve.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/serve.h
+/media/D/tp/3/highload/headers/serve.h
 ../headers/logger.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/logger.h
+/media/D/tp/3/highload/headers/logger.h
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/parser.c
+/media/D/tp/3/highload/src/parser.c
 stdio.h
 -
 stdlib.h
@@ -64,13 +64,13 @@ pthread.h
 string.h
 -
 ../headers/parser.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/parser.h
+/media/D/tp/3/highload/headers/parser.h
 ../headers/http.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/http.h
+/media/D/tp/3/highload/headers/http.h
 ../headers/logger.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/logger.h
+/media/D/tp/3/highload/headers/logger.h
 
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/src/serve.c
+/media/D/tp/3/highload/src/serve.c
 stdio.h
 -
 stdlib.h
@@ -90,11 +90,11 @@ event2/listener.h
 event2/thread.h
 -
 ../headers/http.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/http.h
+/media/D/tp/3/highload/headers/http.h
 ../headers/serve.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/serve.h
+/media/D/tp/3/highload/headers/serve.h
 ../headers/logger.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/logger.h
+/media/D/tp/3/highload/headers/logger.h
 ../headers/parser.h
-/media/gel0/EAA6E36BA6E336AB/Technopark_2018_2/3/highload/headers/parser.h
+/media/D/tp/3/highload/headers/parser.h
 

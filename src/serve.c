@@ -61,7 +61,7 @@ static void set_default_headers(struct response *r)
 
 static void build_default_err_response(struct response *r)
 {
-    set_default_heaers(r);
+    // set_default_heaers(r);
     r->status = HTTP_BAD_REQUEST_STATUS;
     r->http_v = HTTP_V_1_0;
 };
@@ -172,19 +172,40 @@ int listen_and_serve(uint16_t port) {
     struct sockaddr_in     sin;
     struct evconnlistener *listener;
 
+    // Сетим флаг, запрещающий блокировку для event_base
+    // event_config_set_flag(cfg, EVENT_BASE_FLAG_NOLOCK);
+
+    // Сетим флаг, котрый позволяет серверу избежать ненужных системных
+    // вызовов в случае, когда один и тот же fd (file descriptor - сокет) 
+    // изменял свой статус более одного раза между обращением к серверу. 
+    // (Это не будет работать, если мы используем не epoll)
+    // event_config_set_flag(cfg, EVENT_BASE_FLAG_EPOLL_USE_CHANGELIST);
+
+    // Запрещаем использовать слект, потому что он блин медленный нафиг ;^(
+    // event_config_avoid_method(cfg, "select");
+
+    // Создаем eventBase с дефолтной конфигурацией
+    // eventBase сам выбиет наиболее быстрый механизм
+    // обрабоки событий
+    // base = event_base_new_with_config(cfg);
+    base = event_base_new();
+
+    if (!base || base == NULL) {
+       _log(EVENT_LOG_ERR, "Unable to open event base. Terminate.");
+        printf("err");
+       
+       return EVENT_LOG_ERR;
+    }
+
+    // Отчищаем конфиг
+    // event_config_free(cfg);
+
     // Открываем сокет
     memset( &sin, 0, sizeof(sin) );
     sin.sin_family = AF_INET;
     // sin.sin_addr.s_addr = htonl(0); // Принимать запросы только с 0.0.0.0
     sin.sin_addr.s_addr = htonl(INADDR_ANY); // Принимать запросы с любого адреса
     sin.sin_port = htons(port); // Слушаем на заданом порте
-
-    base = event_base_new();
-
-    if (!base) {
-       _log(EVENT_LOG_ERR, "Unable to open event base");
-       return EVENT_LOG_ERR;
-    }
 
     // Создаем "Монитор соединений", сетим колбек для события обращения к сокету sin 
     listener = evconnlistener_new_bind( base, accept_connection_cb, NULL,
